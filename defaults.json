@@ -1,0 +1,45 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    "group:recommended"
+  ],
+  "description": "Groups minor and patch updates together in a single PR, and treat NPM 0.x.x updates as major updates.",
+  "stabilityDays": 3,
+  "timezone": "Europe/Oslo",
+  "internalChecksFilter": "strict",
+  "configMigration": true,
+  "packageRules": [
+    {
+      "matchManagers": [
+        "docker-compose",
+        "dockerfile",
+        "github-actions"
+      ],
+      "groupName": "{{manager}} non-major dependencies",
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupSlug": "{{manager}}-minor-patch"
+    },
+    {
+      "matchManagers": [
+        "npm"
+      ],
+      "groupName": "npm non-major dependencies",
+      "matchCurrentVersion": ">=1.0.0",
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupSlug": "npm-minor-patch"
+    }
+  ]
+}
