@@ -10,8 +10,12 @@
   "internalChecksFilter": "strict",
   "configMigration": true,
   "ignorePresets": [
+    ":ignoreModulesAndTests",
     "group:monorepos"
   ],
+  "docker": {
+    "pinDigests": true
+  },
   "packageRules": [
     {
       "matchManagers": [
