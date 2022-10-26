@@ -16,6 +16,8 @@
   "docker": {
     "pinDigests": true
   },
+  "labels": ["Renovate"],
+  "assignees": ["haakemon"],
   "packageRules": [
     {
       "matchManagers": [
