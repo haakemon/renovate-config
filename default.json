@@ -4,7 +4,6 @@
     "config:base",
     "schedule:weekends"
   ],
-  "includeForks": true,
   "description": "Groups minor and patch updates together in a single PR, and treat NPM 0.x.x updates as major updates.",
   "stabilityDays": 3,
   "timezone": "Europe/Oslo",
