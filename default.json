@@ -2,7 +2,8 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base",
-    "schedule:weekends"
+    "schedule:weekends",
+    "helpers:pinGitHubActionDigests"
   ],
   "description": "Groups minor and patch updates together in a single PR, and treat NPM 0.x.x updates as major updates.",
   "stabilityDays": 3,
