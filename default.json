@@ -1,23 +1,14 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
-    "schedule:weekends",
-    "helpers:pinGitHubActionDigests"
+    "config:best-practices",
+    "schedule:weekends"
   ],
   "description": "Groups minor and patch updates together in a single PR, and treat NPM 0.x.x updates as major updates.",
   "stabilityDays": 3,
   "rollbackPrs": true,
   "timezone": "Europe/Oslo",
   "internalChecksFilter": "strict",
-  "configMigration": true,
-  "ignorePresets": [
-    ":ignoreModulesAndTests",
-    "group:monorepos"
-  ],
-  "docker": {
-    "pinDigests": true
-  },
   "labels": ["Renovate"],
   "assignees": ["haakemon"],
   "packageRules": [
