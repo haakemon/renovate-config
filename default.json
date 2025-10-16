@@ -8,7 +8,6 @@
   "minimumReleaseAge": "14 days",
   "rollbackPrs": true,
   "timezone": "Europe/Oslo",
-  "internalChecksFilter": "strict",
   "labels": ["Renovate"],
   "assignees": ["haakemon"],
   "packageRules": [
