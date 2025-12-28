@@ -42,6 +42,30 @@
         "patch"
       ],
       "groupSlug": "npm-minor-patch"
+    },
+    {
+      // https://docs.renovatebot.com/key-concepts/minimum-release-age/#which-registries-support-release-timestamps
+      "description": "Do not require Minimum Release Age for update types that lack release timestamp support.",
+      "matchDatasources": [
+        "docker"
+      ],
+      "prBodyNotes": [
+        "⚠️ Release timestamp support is lacking for Docker updates, except from Docker Hub. Therefore, we set timestamp-optional for Docker updates."
+      ],
+      "minimumReleaseAgeBehaviour": "timestamp-optional"
+    },
+    {
+      // https://docs.renovatebot.com/key-concepts/minimum-release-age/#which-update-types-take-minimumreleaseage-into-account
+      "description": "Updates does not support release timestamps.",
+      "matchUpdateTypes": [
+        "lockFileMaintenance",
+        "digest",
+        "replacement"
+      ],
+      "prBodyNotes": [
+        "⚠️ Release timestamp support is not available for this update, verify new version manually."
+      ],
+      "minimumReleaseAgeBehaviour": "timestamp-optional"
     }
   ]
 }
