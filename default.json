@@ -4,7 +4,6 @@
     "config:best-practices",
     "mergeConfidence:all-badges"
   ],
-  "prCreation": "not-pending",
   "description": "Groups minor and patch updates together in a single PR, and treat NPM 0.x.x updates as major updates.",
   "minimumReleaseAge": "14 days",
   "timezone": "Europe/Oslo",
