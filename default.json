@@ -6,6 +6,7 @@
   ],
   "description": "Groups minor and patch updates together in a single PR, and treat NPM 0.x.x updates as major updates.",
   "minimumReleaseAge": "14 days",
+  "prHourlyLimit": 10,
   "timezone": "Europe/Oslo",
   "labels": ["Renovate"],
   "assignees": ["haakemon"],
