@@ -4,6 +4,9 @@
     "config:best-practices",
     "mergeConfidence:all-badges"
   ],
+  "ignorePresets": [
+    "security:minimumReleaseAgeNpm"
+  ],
   "description": "Groups minor and patch updates together in a single PR, and treat NPM 0.x.x updates as major updates.",
   "minimumReleaseAge": "14 days",
   "prHourlyLimit": 10,
@@ -45,25 +48,24 @@
     },
     {
       // https://docs.renovatebot.com/key-concepts/minimum-release-age/#which-registries-support-release-timestamps
-      "description": "Do not require Minimum Release Age for update types that lack release timestamp support.",
-      "matchDatasources": [
-        "docker"
-      ],
+      "description": "Docker updates from other registries than Docker Hub does not support release timestamps.",
+      "matchDatasources": ["docker"],
       "prBodyNotes": [
-        "⚠️ Release timestamp support is lacking for Docker updates, except from Docker Hub. Therefore, we set timestamp-optional for Docker updates."
+        "⚠️ Release timestamp support for Docker is only supported on Docker Hub, timestamp is set to optional for this update."
       ],
       "minimumReleaseAgeBehaviour": "timestamp-optional"
     },
     {
       // https://docs.renovatebot.com/key-concepts/minimum-release-age/#which-update-types-take-minimumreleaseage-into-account
-      "description": "Updates does not support release timestamps.",
+      "description": "Lockfile updates, digest updates and replacements does not support release timestamps.",
       "matchUpdateTypes": [
         "lockFileMaintenance",
         "digest",
+        "pin",
         "replacement"
       ],
       "prBodyNotes": [
-        "⚠️ Release timestamp support is not available for this update, verify new version manually."
+        "⚠️ Release timestamp support is not available for this update type, timestamp is set to optional for this update."
       ],
       "minimumReleaseAgeBehaviour": "timestamp-optional"
     }
